@@ -65,8 +65,8 @@ jobs:
           echo "Connected to EC2 instance"
           cd /home/ubuntu
           docker pull jyuni/test:latest
-          docker stop my_app || true
-          docker rm my_app || true
+          docker stop test-app || true
+          docker rm test-app || true
           docker run -d --name test-app -p 80:80 jyuni/test:latest
           echo "Deployment complete"
         EOF
